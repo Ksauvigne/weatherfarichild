@@ -4,12 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My GitHub Pages Site</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        .widget-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding-top: 20%; /* Aspect ratio for the widget, adjust as needed */
+        }
+        .weatherwidget-io {
+            display: block;
+            width: 200%; /* Double the width to allow horizontal scaling */
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scale(0.5, 1); /* Scale width by 50% and maintain height */
+            transform-origin: left center; /* Scale from the left */
+            border: 0;
+        }
+    </style>
 </head>
 <body>
-<a class="weatherwidget-io" href="https://forecast7.com/en/25d66n80d29/33156/?unit=us" data-label_1="MIAMI" data-label_2="WEATHER" data-icons="Climacons Animated" data-theme="weather_one" >MIAMI WEATHER</a>
+<div class="widget-container">
+    <a class="weatherwidget-io" href="https://forecast7.com/en/25d66n80d29/33156/?unit=us" data-label_1="MIAMI" data-label_2="WEATHER" data-icons="Climacons Animated" data-theme="weather_one">MIAMI WEATHER</a>
+</div>
 <script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+!function(d,s,id){
+    var js,fjs=d.getElementsByTagName(s)[0];
+    if(!d.getElementById(id)){
+        js=d.createElement(s);
+        js.id=id;
+        js.src='https://weatherwidget.io/js/widget.min.js';
+        fjs.parentNode.insertBefore(js,fjs);
+    }
+}(document,'script','weatherwidget-io-js');
 </script>
 </body>
 </html>
