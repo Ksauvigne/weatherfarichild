@@ -4,12 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My GitHub Pages Site</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0; /* Optional: Add a background color for better visibility */
+        }
+        .widget-container {
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+            height: 150px; /* Set desired height for the widget */
+        }
+        .weather-background {
+            width: 100%;
+            height: 100%;
+            background: url('https://forecast7.com/en/25d66n80d29/33156/?unit=us') no-repeat center center; /* Background image from the weather widget */
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .weather-content {
+            width: 100%;
+            transform: scale(1, 0.5); /* Scale the content height down to 50% */
+            transform-origin: top; /* Ensure scaling happens from the top */
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+        .weatherwidget-io iframe {
+            width: 100%;
+            height: 200%; /* Double the height to maintain aspect ratio after scaling */
+        }
+    </style>
 </head>
 <body>
-<a class="weatherwidget-io" href="https://forecast7.com/en/25d66n80d29/33156/?unit=us" data-label_1="MIAMI" data-label_2="WEATHER" data-icons="Climacons Animated" data-theme="weather_one" >MIAMI WEATHER</a>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
+<div class="widget-container">
+    <div class="weather-background"></div>
+    <div class="weather-content">
+        <!-- Paste the generated weather widget code here -->
+        <a class="weatherwidget-io" href="https://forecast7.com/en/25d66n80d29/33156/?unit=us" 
+           data-label_1="MIAMI" 
+           data-label_2="WEATHER" 
+           data-icons="Climacons Animated" 
+           data-theme="weather_one">MIAMI WEATHER</a>
+        <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+            if(!d.getElementById(id)){
+                js=d.createElement(s);
+                js.id=id;
+                js.src='https://weatherwidget.io/js/widget.min.js';
+                fjs.parentNode.insertBefore(js,fjs);
+            }}(document,'script','weatherwidget-io-js');
+        </script>
+    </div>
+</div>
 </body>
 </html>
